@@ -14,6 +14,11 @@
 		BEFD30AE16D1B0B300B93D49 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD308E16D1B0B200B93D49 /* Cocoa.framework */; };
 		BEFD30B616D1B0B300B93D49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEFD30B416D1B0B300B93D49 /* InfoPlist.strings */; };
 		BEFD30B916D1B0B300B93D49 /* AetherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD30B816D1B0B300B93D49 /* AetherTests.m */; };
+		BEFD30C316D1B61600B93D49 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD30C216D1B61600B93D49 /* SDL.framework */; };
+		BEFD30C716D1B71E00B93D49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEFD30C416D1B71E00B93D49 /* main.cpp */; };
+		BEFD30D316D1BE1800B93D49 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD30D216D1BE1800B93D49 /* SDLMain.m */; };
+		BEFD30D516D1C3AA00B93D49 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD30D416D1C3AA00B93D49 /* SDL_image.framework */; };
+		BEFD30DC16D1CFD700B93D49 /* logo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEFD30DA16D1CFD700B93D49 /* logo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +30,36 @@
 			remoteInfo = Aether;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BEFD30CB16D1B9C000B93D49 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEFD30CC16D1B9C000B93D49 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEFD30CD16D1B9C000B93D49 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BEFD308A16D1B0B200B93D49 /* Aether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aether.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +77,13 @@
 		BEFD30B516D1B0B300B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEFD30B716D1B0B300B93D49 /* AetherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AetherTests.h; sourceTree = "<group>"; };
 		BEFD30B816D1B0B300B93D49 /* AetherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AetherTests.m; sourceTree = "<group>"; };
+		BEFD30C216D1B61600B93D49 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = ../../../../Library/Frameworks/SDL.framework; sourceTree = "<group>"; };
+		BEFD30C416D1B71E00B93D49 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		BEFD30D116D1BE1800B93D49 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = "<group>"; };
+		BEFD30D216D1BE1800B93D49 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
+		BEFD30D416D1C3AA00B93D49 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = ../../../../Library/Frameworks/SDL_image.framework; sourceTree = "<group>"; };
+		BEFD30DA16D1CFD700B93D49 /* logo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logo.cpp; sourceTree = "<group>"; };
+		BEFD30DB16D1CFD700B93D49 /* logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFD30D516D1C3AA00B93D49 /* SDL_image.framework in Frameworks */,
+				BEFD30C316D1B61600B93D49 /* SDL.framework in Frameworks */,
 				BEFD308F16D1B0B200B93D49 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +112,9 @@
 		BEFD307F16D1B0B200B93D49 = {
 			isa = PBXGroup;
 			children = (
+				BEFD30DD16D1CFEF00B93D49 /* headers */,
+				BEFD30D416D1C3AA00B93D49 /* SDL_image.framework */,
+				BEFD30C216D1B61600B93D49 /* SDL.framework */,
 				BEFD309416D1B0B200B93D49 /* Aether */,
 				BEFD30B116D1B0B300B93D49 /* AetherTests */,
 				BEFD308D16D1B0B200B93D49 /* Frameworks */,
@@ -107,6 +154,11 @@
 		BEFD309416D1B0B200B93D49 /* Aether */ = {
 			isa = PBXGroup;
 			children = (
+				BEFD30D116D1BE1800B93D49 /* SDLMain.h */,
+				BEFD30D216D1BE1800B93D49 /* SDLMain.m */,
+				BEFD30C416D1B71E00B93D49 /* main.cpp */,
+				BEFD30DA16D1CFD700B93D49 /* logo.cpp */,
+				BEFD30DB16D1CFD700B93D49 /* logo.h */,
 				BEFD309516D1B0B200B93D49 /* Supporting Files */,
 			);
 			path = Aether;
@@ -142,6 +194,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BEFD30DD16D1CFEF00B93D49 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = headers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +211,9 @@
 				BEFD308616D1B0B200B93D49 /* Sources */,
 				BEFD308716D1B0B200B93D49 /* Frameworks */,
 				BEFD308816D1B0B200B93D49 /* Resources */,
+				BEFD30CB16D1B9C000B93D49 /* CopyFiles */,
+				BEFD30CC16D1B9C000B93D49 /* CopyFiles */,
+				BEFD30CD16D1B9C000B93D49 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -250,6 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFD30C716D1B71E00B93D49 /* main.cpp in Sources */,
+				BEFD30D316D1BE1800B93D49 /* SDLMain.m in Sources */,
+				BEFD30DC16D1CFD700B93D49 /* logo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,8 +419,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /Library/Frameworks;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Aether/Aether-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = headers;
 				INFOPLIST_FILE = "Aether/Aether-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -366,8 +433,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /Library/Frameworks;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Aether/Aether-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = headers;
 				INFOPLIST_FILE = "Aether/Aether-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
