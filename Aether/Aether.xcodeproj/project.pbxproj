@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		BEFD308F16D1B0B200B93D49 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD308E16D1B0B200B93D49 /* Cocoa.framework */; };
 		BEFD309916D1B0B200B93D49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEFD309716D1B0B200B93D49 /* InfoPlist.strings */; };
-		BEFD309B16D1B0B200B93D49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD309A16D1B0B200B93D49 /* main.m */; };
 		BEFD309F16D1B0B200B93D49 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BEFD309D16D1B0B200B93D49 /* Credits.rtf */; };
-		BEFD30A216D1B0B200B93D49 /* aethAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD30A116D1B0B200B93D49 /* aethAppDelegate.m */; };
-		BEFD30A516D1B0B300B93D49 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEFD30A316D1B0B300B93D49 /* MainMenu.xib */; };
 		BEFD30AD16D1B0B300B93D49 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD30AC16D1B0B300B93D49 /* SenTestingKit.framework */; };
 		BEFD30AE16D1B0B300B93D49 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD308E16D1B0B200B93D49 /* Cocoa.framework */; };
 		BEFD30B616D1B0B300B93D49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEFD30B416D1B0B300B93D49 /* InfoPlist.strings */; };
@@ -37,12 +34,8 @@
 		BEFD309316D1B0B200B93D49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BEFD309616D1B0B200B93D49 /* Aether-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Aether-Info.plist"; sourceTree = "<group>"; };
 		BEFD309816D1B0B200B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BEFD309A16D1B0B200B93D49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEFD309C16D1B0B200B93D49 /* Aether-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aether-Prefix.pch"; sourceTree = "<group>"; };
 		BEFD309E16D1B0B200B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		BEFD30A016D1B0B200B93D49 /* aethAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aethAppDelegate.h; sourceTree = "<group>"; };
-		BEFD30A116D1B0B200B93D49 /* aethAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aethAppDelegate.m; sourceTree = "<group>"; };
-		BEFD30A416D1B0B300B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BEFD30AB16D1B0B300B93D49 /* AetherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AetherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD30AC16D1B0B300B93D49 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BEFD30B316D1B0B300B93D49 /* AetherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AetherTests-Info.plist"; sourceTree = "<group>"; };
@@ -114,9 +107,6 @@
 		BEFD309416D1B0B200B93D49 /* Aether */ = {
 			isa = PBXGroup;
 			children = (
-				BEFD30A016D1B0B200B93D49 /* aethAppDelegate.h */,
-				BEFD30A116D1B0B200B93D49 /* aethAppDelegate.m */,
-				BEFD30A316D1B0B300B93D49 /* MainMenu.xib */,
 				BEFD309516D1B0B200B93D49 /* Supporting Files */,
 			);
 			path = Aether;
@@ -127,7 +117,6 @@
 			children = (
 				BEFD309616D1B0B200B93D49 /* Aether-Info.plist */,
 				BEFD309716D1B0B200B93D49 /* InfoPlist.strings */,
-				BEFD309A16D1B0B200B93D49 /* main.m */,
 				BEFD309C16D1B0B200B93D49 /* Aether-Prefix.pch */,
 				BEFD309D16D1B0B200B93D49 /* Credits.rtf */,
 			);
@@ -227,7 +216,6 @@
 			files = (
 				BEFD309916D1B0B200B93D49 /* InfoPlist.strings in Resources */,
 				BEFD309F16D1B0B200B93D49 /* Credits.rtf in Resources */,
-				BEFD30A516D1B0B300B93D49 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEFD309B16D1B0B200B93D49 /* main.m in Sources */,
-				BEFD30A216D1B0B200B93D49 /* aethAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +286,6 @@
 				BEFD309E16D1B0B200B93D49 /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		BEFD30A316D1B0B300B93D49 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BEFD30A416D1B0B300B93D49 /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 		BEFD30B416D1B0B300B93D49 /* InfoPlist.strings */ = {
