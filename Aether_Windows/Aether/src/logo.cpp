@@ -10,10 +10,10 @@
 #include "SDL.h"
 #include "SDL_image.h"
 
-std::string filename = "C:/logo.png";
+std::string filename = "C:\\Users\\Administrator\\Documents\\GitHub\\ducking-cyril\\Aether\\logo.png";
 logo::logo(SDL_Surface *srcScreen){
     screen = srcScreen;
-    image = IMG_Load(filename.c_str());
+    image = IMG_Load("C:\\Users\\Administrator\\Documents\\GitHub\\ducking-cyril\\Aether\\logo.png");
 
     std::cout << "imgage load: " << image;
 }
