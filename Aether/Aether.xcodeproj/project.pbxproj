@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEBE8D2C16D2D91400C67207 /* AetherEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEBE8D2B16D2D91400C67207 /* AetherEngine.cpp */; };
 		BEFD308F16D1B0B200B93D49 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD308E16D1B0B200B93D49 /* Cocoa.framework */; };
 		BEFD309916D1B0B200B93D49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEFD309716D1B0B200B93D49 /* InfoPlist.strings */; };
 		BEFD309F16D1B0B200B93D49 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BEFD309D16D1B0B200B93D49 /* Credits.rtf */; };
@@ -62,6 +63,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BEBE8D2A16D2D8FF00C67207 /* AetherEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AetherEngine.h; path = headers/AetherEngine.h; sourceTree = "<group>"; };
+		BEBE8D2B16D2D91400C67207 /* AetherEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AetherEngine.cpp; sourceTree = "<group>"; };
+		BEBE8D2D16D2D9EB00C67207 /* logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = logo.h; path = headers/logo.h; sourceTree = "<group>"; };
 		BEFD308A16D1B0B200B93D49 /* Aether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD308E16D1B0B200B93D49 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BEFD309116D1B0B200B93D49 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -83,7 +87,6 @@
 		BEFD30D216D1BE1800B93D49 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
 		BEFD30D416D1C3AA00B93D49 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = ../../../../Library/Frameworks/SDL_image.framework; sourceTree = "<group>"; };
 		BEFD30DA16D1CFD700B93D49 /* logo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logo.cpp; sourceTree = "<group>"; };
-		BEFD30DB16D1CFD700B93D49 /* logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,11 +157,11 @@
 		BEFD309416D1B0B200B93D49 /* Aether */ = {
 			isa = PBXGroup;
 			children = (
+				BEBE8D2B16D2D91400C67207 /* AetherEngine.cpp */,
 				BEFD30D116D1BE1800B93D49 /* SDLMain.h */,
 				BEFD30D216D1BE1800B93D49 /* SDLMain.m */,
 				BEFD30C416D1B71E00B93D49 /* main.cpp */,
 				BEFD30DA16D1CFD700B93D49 /* logo.cpp */,
-				BEFD30DB16D1CFD700B93D49 /* logo.h */,
 				BEFD309516D1B0B200B93D49 /* Supporting Files */,
 			);
 			path = Aether;
@@ -197,6 +200,8 @@
 		BEFD30DD16D1CFEF00B93D49 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				BEBE8D2D16D2D9EB00C67207 /* logo.h */,
+				BEBE8D2A16D2D8FF00C67207 /* AetherEngine.h */,
 			);
 			name = headers;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				BEFD30C716D1B71E00B93D49 /* main.cpp in Sources */,
 				BEFD30D316D1BE1800B93D49 /* SDLMain.m in Sources */,
 				BEFD30DC16D1CFD700B93D49 /* logo.cpp in Sources */,
+				BEBE8D2C16D2D91400C67207 /* AetherEngine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +498,7 @@
 				BEFD30BE16D1B0B300B93D49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEFD30BF16D1B0B300B93D49 /* Build configuration list for PBXNativeTarget "AetherTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +507,7 @@
 				BEFD30C116D1B0B300B93D49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

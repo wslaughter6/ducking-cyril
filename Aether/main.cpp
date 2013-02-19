@@ -12,17 +12,15 @@
 
 #include "SDL.h"
 #include "SDL_image.h"
-#include "logo.h"
-class logo;
+#include "AetherEngine.h"
+
 
 int main(int argc, char *argv[])
 {
 	Uint32 initflags = SDL_INIT_VIDEO;  /* See documentation for details */
 	SDL_Surface *screen;
-    SDL_Surface *image;
-    SDL_Surface *temp;
 	Uint8  video_bpp = 16;
-	Uint32 videoflags = SDL_DOUBLEBUF;// | SDL_FULLSCREEN;
+	Uint32 videoflags = SDL_DOUBLEBUF | SDL_SWSURFACE;// | SDL_FULLSCREEN;
 	int done;
     int beginLogo;
     int endLogo;
@@ -45,18 +43,16 @@ int main(int argc, char *argv[])
 	}
 
 	done = 0;
-    beginLogo = 1;
-    endLogo = 0;
-    logo *logoScreen = new logo(screen);
+    //initialize Aether Engine
+    AetherEngine *engine = new AetherEngine(screen);
+    engine->loadLogo("/Users/will/logo.png");
+    engine->drawLogoSequence();
+    SDL_Flip(screen);
 	while ( !done ) {
-        if(beginLogo){
-            logoScreen->fadeIn();
-            beginLogo = 0;
-        }
-        if(endLogo) {
-            logoScreen->fadeOut();
-            done = 1;
-        }
+        
+        
+        
+        
         
         
         
