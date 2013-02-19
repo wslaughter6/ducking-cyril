@@ -17,46 +17,21 @@
 
 int main(int argc, char *argv[])
 {
-	Uint32 initflags = SDL_INIT_VIDEO;  /* See documentation for details */
-	SDL_Surface *screen;
-	Uint8  video_bpp = 16;
-	Uint32 videoflags = SDL_DOUBLEBUF | SDL_SWSURFACE;// | SDL_FULLSCREEN;
-	int done;
-    int beginLogo;
+    int done;
+    int finished;
     int endLogo;
     SDL_Event event;
-
-	/* Initialize the SDL library */
-	if ( SDL_Init(initflags) < 0 ) {
-		fprintf(stderr, "Couldn't initialize SDL: %s\n",
-			SDL_GetError());
-		exit(1);
-	}
-
-	/* Set 640x480 video mode */
-	screen=SDL_SetVideoMode(1024,768, video_bpp, videoflags);
-        if (screen == NULL) {
-		fprintf(stderr, "Couldn't set 1024x768x%d video mode: %s\n",
-                        video_bpp, SDL_GetError());
-		SDL_Quit();
-		exit(2);
-	}
-
-	done = 0;
+	
     //initialize Aether Engine
-    AetherEngine *engine = new AetherEngine(screen);
-    engine->loadLogo("/Users/will/logo.png");
-    engine->drawLogoSequence();
-    SDL_Flip(screen);
-	while ( !done ) {
+    AetherEngine engine = *new AetherEngine();
+    engine.loadLogo("/Users/will/logo.png");
+    //SDL_W
+    engine.drawLogoSequence();
+    finished = 0;
+    done = 0;
+   	while ( !done ) {
         
-        
-        
-        
-        
-        
-        
-
+       
 		/* Check for events */
 		while ( SDL_PollEvent(&event) ) {
 			switch (event.type) {
@@ -68,14 +43,14 @@ int main(int argc, char *argv[])
 				case SDL_KEYDOWN:
 					/* Any keypress quits the app... */
 				case SDL_QUIT:
-					done = 1;
+					//done = 1;
 					break;
 				default:
 					break;
 			}
 		}
 	}
-	
+	engine.shutdown();
 	/* Clean up the SDL library */
 	SDL_Quit();
 	return(0);

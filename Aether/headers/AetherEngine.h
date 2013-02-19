@@ -16,15 +16,23 @@
 class AetherEngine {
     SDL_Surface *mainScreen;
     SDL_Surface *studioLogo;
+    Uint32 initflags; /* See documentation for details */
+	Uint8  video_bpp;
+	Uint32 videoflags;
+
+    bool KEYS[322];
     //SDL_Surface *image;
     //SDL_Surface *readyImage;
     int blitResult;
 public:
-    AetherEngine(SDL_Surface *srcScreen);
+    AetherEngine(void);
     ~AetherEngine(void);
     void drawBitmap(SDL_Surface *bitmap, int x, int y);
     void loadLogo(std::string logoPath);
     void drawLogoSequence();
+    void clearMainScreen();
+    void shutdown();
 private:
+    void keyboard();
     
 };
