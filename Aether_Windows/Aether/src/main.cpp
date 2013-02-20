@@ -26,28 +26,14 @@ int main(int argc, char *argv[])
     int endLogo;
     SDL_Event event;
 
-	/* Initialize the SDL library */
-	if ( SDL_Init(initflags) < 0 ) {
-		fprintf(stderr, "Couldn't initialize SDL: %s\n",
-			SDL_GetError());
-		exit(1);
-	}
-
-	/* Set 640x480 video mode */
-	screen=SDL_SetVideoMode(1024,768, video_bpp, videoflags);
-        if (screen == NULL) {
-		fprintf(stderr, "Couldn't set 1024x768x%d video mode: %s\n",
-                        video_bpp, SDL_GetError());
-		SDL_Quit();
-		exit(2);
-	}
+	
 
 	done = 0;
     //initialize Aether Engine
-    AetherEngine *engine = new AetherEngine(screen);
+    AetherEngine *engine = new AetherEngine();
     engine->loadLogo("logo.png");
     engine->drawLogoSequence();
-    SDL_Flip(screen);
+  
 	while ( !done ) {
         
         
