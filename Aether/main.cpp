@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     //initialize Aether Engine
     AetherEngine engine = *new AetherEngine();
     engine.loadLogo("/Users/will/logo.png");
-    //SDL_W
+    
     engine.drawLogoSequence();
     finished = 0;
     done = 0;
@@ -43,14 +43,13 @@ int main(int argc, char *argv[])
 				case SDL_KEYDOWN:
 					/* Any keypress quits the app... */
 				case SDL_QUIT:
-					//done = 1;
+					done = 1;
 					break;
 				default:
 					break;
 			}
 		}
 	}
-	engine.shutdown();
 	/* Clean up the SDL library */
 	SDL_Quit();
 	return(0);

@@ -81,11 +81,15 @@ void AetherEngine::drawLogoSequence(){
 
         }
         
-        while(1){
+        int moveLogo = 1;
+        while(moveLogo){
             //SDL_Delay(20);
             //std::cout << mainScreen;
             //SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, i);
             keyboard();
+            if (KEYS[SDLK_ESCAPE]){
+                moveLogo = 0;
+            }
             if (KEYS[SDLK_LEFT]){
                 dstRect.x--;
             }
@@ -102,12 +106,10 @@ void AetherEngine::drawLogoSequence(){
             SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
             std::cout << SDL_Flip(mainScreen);
         }
-         
-        SDL_FreeSurface(studioLogo);
-        return;
+        clearMainScreen();
+        SDL_Flip(mainScreen);
     }else {
         std::cout << "no logo has been loaded" << "\n";
-        return;
     }
     
 }
@@ -143,10 +145,9 @@ void AetherEngine::keyboard() {
 }
 
 void AetherEngine::shutdown(){
-    SDL_FreeSurface(studioLogo);
     SDL_FreeSurface(mainScreen);
 }
 AetherEngine::~AetherEngine(){
-    SDL_FreeSurface(studioLogo);
-    SDL_FreeSurface(mainScreen);
+    //SDL_FreeSurface(studioLogo);
+    //SDL_FreeSurface(mainScreen);
 }
