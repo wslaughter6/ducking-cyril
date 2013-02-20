@@ -9,6 +9,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "stdio.h"
+#include "Windows.h" //non-portable header, duh
 
 
 AetherEngine::AetherEngine(){
@@ -81,6 +82,16 @@ void AetherEngine::drawLogoSequence(){
             SDL_Flip(mainScreen);
 
         }
+		Sleep(1000); //Non-portable method, comes from Windows.h, won't work in mac
+		for(int i = 0; i < 200; i++){
+            clearMainScreen();
+            SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, 255 - i);
+            SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
+            SDL_Flip(mainScreen);
+
+        } //this looponly goes to 200 for now, just to keep the logo move test workable. 
+		// change the limit to 255 to fade all the way out
+
         int moveLogo = 1;
         while(moveLogo){
             //SDL_Delay(20);

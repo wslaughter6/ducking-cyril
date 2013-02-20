@@ -35,14 +35,6 @@ int main(int argc, char *argv[])
     engine->drawLogoSequence();
   
 	while ( !done ) {
-        
-        
-        
-        
-        
-        
-        
-
 		/* Check for events */
 		while ( SDL_PollEvent(&event) ) {
 			switch (event.type) {
