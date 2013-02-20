@@ -9,6 +9,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "stdio.h"
+//#include "Windows.h" //non-portable header, duh
 
 
 AetherEngine::AetherEngine(){
@@ -27,7 +28,8 @@ AetherEngine::AetherEngine(){
 		SDL_Quit();
 		exit(2);
 	}
-
+	
+    
     for(int i = 0; i < 322; i++){ //init keys
         KEYS[i] = false;
     }
@@ -78,8 +80,17 @@ void AetherEngine::drawLogoSequence(){
             SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, i);
             SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
             SDL_Flip(mainScreen);
-
+            
         }
+		SDL_Delay(1000); //Non-portable method, comes from Windows.h, won't work in mac
+		for(int i = 0; i < 200; i++){
+            clearMainScreen();
+            SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, 255 - i);
+            SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
+            SDL_Flip(mainScreen);
+            
+        } //this looponly goes to 200 for now, just to keep the logo move test workable.
+		// change the limit to 255 to fade all the way out
         
         int moveLogo = 1;
         while(moveLogo){
@@ -87,9 +98,9 @@ void AetherEngine::drawLogoSequence(){
             //std::cout << mainScreen;
             //SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, i);
             keyboard();
-            if (KEYS[SDLK_ESCAPE]){
-                moveLogo = 0;
-            }
+			if (KEYS[SDLK_ESCAPE]){
+				moveLogo = 0;
+			}
             if (KEYS[SDLK_LEFT]){
                 dstRect.x--;
             }
@@ -106,10 +117,13 @@ void AetherEngine::drawLogoSequence(){
             SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
             std::cout << SDL_Flip(mainScreen);
         }
-        clearMainScreen();
-        SDL_Flip(mainScreen);
+		clearMainScreen();
+		SDL_Flip(mainScreen);
+        
+        return;
     }else {
         std::cout << "no logo has been loaded" << "\n";
+        return;
     }
     
 }
@@ -144,10 +158,4 @@ void AetherEngine::keyboard() {
     } // end of message processing
 }
 
-void AetherEngine::shutdown(){
-    SDL_FreeSurface(mainScreen);
-}
-AetherEngine::~AetherEngine(){
-    //SDL_FreeSurface(studioLogo);
-    //SDL_FreeSurface(mainScreen);
-}
+

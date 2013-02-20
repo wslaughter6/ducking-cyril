@@ -26,7 +26,6 @@ class AetherEngine {
     int blitResult;
 public:
     AetherEngine(void);
-    ~AetherEngine(void);
     void drawBitmap(SDL_Surface *bitmap, int x, int y);
     void loadLogo(std::string logoPath);
     void drawLogoSequence();
