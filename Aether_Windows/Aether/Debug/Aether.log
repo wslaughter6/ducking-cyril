@@ -1,8 +1,10 @@
-﻿Build started 2/20/2013 2:02:56 AM.
+﻿Build started 2/23/2013 5:34:01 PM.
      1>Project "C:\Users\Baldesac\Documents\GitHub\ducking-cyril\Aether_Windows\Aether\Aether.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AetherEngine.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\AetherEngine.cpp
          AetherEngine.cpp
+       ResourceCompile:
+         C:\Program Files\Windows Kits\8.0\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\Aether.res" Aether.rc 
        Link:
          C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Baldesac\Documents\GitHub\ducking-cyril\Aether_Windows\Aether\Debug\Aether.exe" /INCREMENTAL /NOLOGO SDL.lib SDLmain.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Baldesac\Documents\GitHub\ducking-cyril\Aether_Windows\Aether\Debug\Aether.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Baldesac\Documents\GitHub\ducking-cyril\Aether_Windows\Aether\Debug\Aether.lib" /MACHINE:X86 Debug\Aether.res
          Debug\AetherEngine.obj
@@ -13,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.82
+Time Elapsed 00:00:04.86

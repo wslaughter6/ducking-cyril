@@ -68,7 +68,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AetherEngine.cpp" />
+    <ClCompile Include="src\AetherEngine.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -77,7 +77,6 @@
   <ItemGroup>
     <ClInclude Include="headers\AetherEngine.h" />
     <ClInclude Include="headers\SDL_image.h" />
-    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Aether.rc" />
