@@ -41,8 +41,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="lib\SDL_image.lib">
-      <Filter>Resource Files</Filter>
-    </Library>
+    <Library Include="lib\SDL_image.lib" />
   </ItemGroup>
 </Project>

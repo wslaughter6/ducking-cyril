@@ -9,26 +9,26 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "stdio.h"
-#include "Windows.h" //non-portable header, duh
 
 
 AetherEngine::AetherEngine(){
     initflags = SDL_INIT_VIDEO; //init flags
     video_bpp = 32; //bpp
-    videoflags = SDL_DOUBLEBUF; //| SDL_SWSURFACE;// | SDL_FULLSCREEN;
+    videoflags = SDL_DOUBLEBUF | SDL_HWSURFACE; //| SDL_FULLSCREEN;
     if ( SDL_Init(initflags) < 0 ) { //init sdl
 		fprintf(stderr, "Couldn't initialize SDL: %s\n",
                 SDL_GetError());
 		exit(1);
 	}
     mainScreen=SDL_SetVideoMode(1024,768, video_bpp, videoflags); //init screen
-    if (mainScreen == NULL) {
+
+	if (mainScreen == NULL) {
 		fprintf(stderr, "Couldn't set 1024x768x%d video mode: %s\n",
                 video_bpp, SDL_GetError());
 		SDL_Quit();
 		exit(2);
 	}
-	
+	SDL_WM_SetCaption("AetherEngine", NULL);
 
     for(int i = 0; i < 322; i++){ //init keys
         KEYS[i] = false;
@@ -64,10 +64,10 @@ void AetherEngine::drawLogoSequence(){
         //std::cout << "logo bitmap found at address: " << studioLogo << ", attempting to draw" << "\n";
         
         SDL_Rect dstRect;
-        dstRect.x = 135;
-        dstRect.y = 100;
         dstRect.w = studioLogo->w;
         dstRect.h = studioLogo->h;
+		dstRect.x = (1024 - dstRect.w)/2;
+        dstRect.y = (768 - dstRect.h)/3;
         //SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
         //SDL_Flip(mainScreen);
         clearMainScreen();
@@ -82,7 +82,7 @@ void AetherEngine::drawLogoSequence(){
             SDL_Flip(mainScreen);
 
         }
-		Sleep(1000); //Non-portable method, comes from Windows.h, won't work in mac
+		SDL_Delay(1000);
 		for(int i = 0; i < 200; i++){
             clearMainScreen();
             SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, 255 - i);

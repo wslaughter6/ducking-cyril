@@ -17,28 +17,19 @@
 
 int main(int argc, char *argv[])
 {
-	Uint32 initflags = SDL_INIT_VIDEO;  /* See documentation for details */
-	SDL_Surface *screen;
-	Uint8  video_bpp = 16;
-	Uint32 videoflags = SDL_DOUBLEBUF | SDL_SWSURFACE;// | SDL_FULLSCREEN;
 	int done;
-    int beginLogo;
-    int endLogo;
     SDL_Event event;
-
-	
-
 	done = 0;
     //initialize Aether Engine
     AetherEngine *engine = new AetherEngine();
+	SDL_WM_SetCaption("Aether", NULL); 
     engine->loadLogo("logo.png");
     engine->drawLogoSequence();
-  
+
 	while ( !done ) {
 		/* Check for events */
 		while ( SDL_PollEvent(&event) ) {
 			switch (event.type) {
-
 				case SDL_MOUSEMOTION:
 					break;
 				case SDL_MOUSEBUTTONDOWN:
