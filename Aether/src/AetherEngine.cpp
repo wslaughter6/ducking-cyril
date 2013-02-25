@@ -152,16 +152,16 @@ void AetherEngine::levelExplorer(){
             exploreLevel = 0;
         }
         if (KEYS[SDLK_LEFT]){
-            level1.setCurrentX(level1.getCurrentX() - 2);
+            level1.setCurrentX(level1.getCurrentX() - 20);
         }
         if (KEYS[SDLK_RIGHT]){
-            level1.setCurrentX(level1.getCurrentX() + 2);
+            level1.setCurrentX(level1.getCurrentX() + 20);
         }
         if (KEYS[SDLK_UP]){
-            level1.setCurrentY(level1.getCurrentY() - 2);
+            level1.setCurrentY(level1.getCurrentY() - 20);
         }
         if (KEYS[SDLK_DOWN]){
-            level1.setCurrentY(level1.getCurrentY() + 2);
+            level1.setCurrentY(level1.getCurrentY() + 20);
         }
         if (level1.getCurrentX() > 1012){
             level1.setCurrentX(1012);
