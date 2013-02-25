@@ -19,7 +19,6 @@ int main(int argc, char *argv[])
 {
     int done;
     int finished;
-    int endLogo;
     SDL_Event event;
 	
     //initialize Aether Engine
@@ -27,6 +26,8 @@ int main(int argc, char *argv[])
     engine.loadLogo("/Users/will/logo.png");
     
     engine.drawLogoSequence();
+    engine.loadLevel(1, "/Users/will/ducking-cyril/Aether/resources/level1.xml");
+    engine.levelExplorer();
     finished = 0;
     done = 0;
    	while ( !done ) {

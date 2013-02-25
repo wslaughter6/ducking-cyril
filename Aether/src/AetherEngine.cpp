@@ -15,7 +15,7 @@
 AetherEngine::AetherEngine(){
     initflags = SDL_INIT_VIDEO; //init flags
     video_bpp = 32; //bpp
-    videoflags = SDL_DOUBLEBUF; //| SDL_SWSURFACE;// | SDL_FULLSCREEN;
+    videoflags = SDL_DOUBLEBUF | SDL_HWSURFACE; //| SDL_SWSURFACE;// | SDL_FULLSCREEN;
     if ( SDL_Init(initflags) < 0 ) { //init sdl
 		fprintf(stderr, "Couldn't initialize SDL: %s\n",
                 SDL_GetError());
@@ -34,6 +34,7 @@ AetherEngine::AetherEngine(){
         KEYS[i] = false;
     }
     SDL_EnableKeyRepeat(0, 0);
+    AetherLevel level1 = *new AetherLevel();
 }
 
 //
@@ -75,15 +76,15 @@ void AetherEngine::drawLogoSequence(){
         clearMainScreen();
         SDL_Flip(mainScreen);
         keyboard();
-        for(int i = 0; i < 255; i++){
+        for(int i = 0; i < 255; i+=2){
             clearMainScreen();
             SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, i);
             SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
             SDL_Flip(mainScreen);
             
         }
-		SDL_Delay(1000); //Non-portable method, comes from Windows.h, won't work in mac
-		for(int i = 0; i < 200; i++){
+		//SDL_Delay(1000); //Non-portable method, comes from Windows.h, won't work in mac
+		for(int i = 0; i < 200; i+=2){
             clearMainScreen();
             SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, 255 - i);
             SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
@@ -125,7 +126,10 @@ void AetherEngine::drawLogoSequence(){
         std::cout << "no logo has been loaded" << "\n";
         return;
     }
-    
+}
+
+void AetherEngine::loadLevel(int levelNum, std::string levelPath){
+    level1.loadLevel(levelPath);
 }
 
 void AetherEngine::drawBitmap(SDL_Surface *bitmap, int x, int y){
@@ -134,6 +138,74 @@ void AetherEngine::drawBitmap(SDL_Surface *bitmap, int x, int y){
     dest.y = y;
     SDL_BlitSurface(bitmap, NULL, this->mainScreen, &dest);
 }
+
+void AetherEngine::levelExplorer(){
+    SDL_Rect dstRect;
+    dstRect.x = 0;
+    dstRect.y = 0;
+    dstRect.w = 1024;
+    dstRect.h = 768;
+    int exploreLevel = 1;
+    while(exploreLevel){
+        keyboard();
+        if (KEYS[SDLK_ESCAPE]){
+            exploreLevel = 0;
+        }
+        if (KEYS[SDLK_LEFT]){
+            level1.setCurrentX(level1.getCurrentX() - 2);
+        }
+        if (KEYS[SDLK_RIGHT]){
+            level1.setCurrentX(level1.getCurrentX() + 2);
+        }
+        if (KEYS[SDLK_UP]){
+            level1.setCurrentY(level1.getCurrentY() - 2);
+        }
+        if (KEYS[SDLK_DOWN]){
+            level1.setCurrentY(level1.getCurrentY() + 2);
+        }
+        if (level1.getCurrentX() > 1012){
+            level1.setCurrentX(1012);
+        }
+        if(level1.getCurrentX() < 1){
+            level1.setCurrentX(1);
+        }
+        if(level1.getCurrentY() < 1){
+            level1.setCurrentY(1);
+        }
+        if(level1.getCurrentY() > 459){
+            level1.setCurrentY(459);
+        }
+        SDL_Surface *curScreen = level1.pollLevel();
+    
+        
+        //clearMainScreen();
+        SDL_BlitSurface(curScreen, NULL, mainScreen, &dstRect);
+        SDL_Flip(mainScreen);
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void AetherEngine::keyboard() {
     // message processing loop
     SDL_Event event;

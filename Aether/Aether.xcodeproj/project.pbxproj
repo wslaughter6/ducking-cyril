@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE8EC1F716D99B2D005527B1 /* AetherLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8EC1F516D99B2D005527B1 /* AetherLevel.cpp */; };
+		BE8EC20116D9BE56005527B1 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8EC1FF16D9BE56005527B1 /* Background.cpp */; };
+		BE8EC20216D9BE56005527B1 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8EC20016D9BE56005527B1 /* Platform.cpp */; };
+		BE8EC20A16D9E24F005527B1 /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8EC20916D9E24F005527B1 /* pugixml.cpp */; };
 		BEF50E4A16D979BB00B1AB2F /* AetherEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEF50E4916D979BB00B1AB2F /* AetherEngine.cpp */; };
 		BEF50EA116D97A6400B1AB2F /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF50EA016D97A6400B1AB2F /* SDLMain.m */; };
 		BEF50EA316D97A7100B1AB2F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEF50EA216D97A7100B1AB2F /* main.cpp */; };
@@ -62,6 +66,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE8EC1F416D99AF9005527B1 /* Aether-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Aether-Prefix.pch"; path = "src/Aether-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		BE8EC1F516D99B2D005527B1 /* AetherLevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AetherLevel.cpp; path = src/AetherLevel.cpp; sourceTree = SOURCE_ROOT; };
+		BE8EC1F816D99B75005527B1 /* AetherLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AetherLevel.h; sourceTree = "<group>"; };
+		BE8EC1FF16D9BE56005527B1 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Background.cpp; path = src/Background.cpp; sourceTree = SOURCE_ROOT; };
+		BE8EC20016D9BE56005527B1 /* Platform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Platform.cpp; path = src/Platform.cpp; sourceTree = SOURCE_ROOT; };
+		BE8EC20916D9E24F005527B1 /* pugixml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pugixml.cpp; path = src/pugixml.cpp; sourceTree = SOURCE_ROOT; };
+		BE8EC20B16D9E259005527B1 /* pugiconfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugiconfig.hpp; sourceTree = "<group>"; };
+		BE8EC20C16D9E261005527B1 /* pugixml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugixml.hpp; sourceTree = "<group>"; };
 		BEF50E4916D979BB00B1AB2F /* AetherEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AetherEngine.cpp; path = src/AetherEngine.cpp; sourceTree = SOURCE_ROOT; };
 		BEF50E7716D97A2300B1AB2F /* AetherEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AetherEngine.h; sourceTree = "<group>"; };
 		BEF50E7816D97A2300B1AB2F /* begin_code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = begin_code.h; sourceTree = "<group>"; };
@@ -111,14 +123,13 @@
 		BEFD309116D1B0B200B93D49 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		BEFD309216D1B0B200B93D49 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BEFD309316D1B0B200B93D49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		BEFD309616D1B0B200B93D49 /* Aether-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Aether-Info.plist"; sourceTree = "<group>"; };
-		BEFD309816D1B0B200B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BEFD309C16D1B0B200B93D49 /* Aether-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aether-Prefix.pch"; sourceTree = "<group>"; };
-		BEFD309E16D1B0B200B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		BEFD309616D1B0B200B93D49 /* src/Aether-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "src/Aether-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BEFD309816D1B0B200B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = src/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		BEFD309E16D1B0B200B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = src/en.lproj/Credits.rtf; sourceTree = SOURCE_ROOT; };
 		BEFD30AB16D1B0B300B93D49 /* AetherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AetherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD30AC16D1B0B300B93D49 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BEFD30B316D1B0B300B93D49 /* AetherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AetherTests-Info.plist"; sourceTree = "<group>"; };
-		BEFD30B516D1B0B300B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEFD30B516D1B0B300B93D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = src/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		BEFD30B716D1B0B300B93D49 /* AetherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AetherTests.h; sourceTree = "<group>"; };
 		BEFD30B816D1B0B300B93D49 /* AetherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AetherTests.m; sourceTree = "<group>"; };
 		BEFD30C216D1B61600B93D49 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = ../../../../Library/Frameworks/SDL.framework; sourceTree = "<group>"; };
@@ -151,6 +162,9 @@
 		BEF50E7616D97A2300B1AB2F /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				BE8EC20C16D9E261005527B1 /* pugixml.hpp */,
+				BE8EC20B16D9E259005527B1 /* pugiconfig.hpp */,
+				BE8EC1F816D99B75005527B1 /* AetherLevel.h */,
 				BEF50E7716D97A2300B1AB2F /* AetherEngine.h */,
 				BEF50E7816D97A2300B1AB2F /* begin_code.h */,
 				BEF50E7916D97A2300B1AB2F /* close_code.h */,
@@ -202,7 +216,7 @@
 				BEF50E7616D97A2300B1AB2F /* headers */,
 				BEFD30D416D1C3AA00B93D49 /* SDL_image.framework */,
 				BEFD30C216D1B61600B93D49 /* SDL.framework */,
-				BEFD309416D1B0B200B93D49 /* Aether */,
+				BEFD309416D1B0B200B93D49 /* src */,
 				BEFD30B116D1B0B300B93D49 /* AetherTests */,
 				BEFD308D16D1B0B200B93D49 /* Frameworks */,
 				BEFD308B16D1B0B200B93D49 /* Products */,
@@ -238,23 +252,28 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		BEFD309416D1B0B200B93D49 /* Aether */ = {
+		BEFD309416D1B0B200B93D49 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				BE8EC20916D9E24F005527B1 /* pugixml.cpp */,
+				BE8EC1FF16D9BE56005527B1 /* Background.cpp */,
+				BE8EC20016D9BE56005527B1 /* Platform.cpp */,
+				BE8EC1F516D99B2D005527B1 /* AetherLevel.cpp */,
 				BEF50EA216D97A7100B1AB2F /* main.cpp */,
 				BEF50EA016D97A6400B1AB2F /* SDLMain.m */,
 				BEF50E4916D979BB00B1AB2F /* AetherEngine.cpp */,
 				BEFD309516D1B0B200B93D49 /* Supporting Files */,
 			);
+			name = src;
 			path = Aether;
 			sourceTree = "<group>";
 		};
 		BEFD309516D1B0B200B93D49 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BEFD309616D1B0B200B93D49 /* Aether-Info.plist */,
+				BE8EC1F416D99AF9005527B1 /* Aether-Prefix.pch */,
+				BEFD309616D1B0B200B93D49 /* src/Aether-Info.plist */,
 				BEFD309716D1B0B200B93D49 /* InfoPlist.strings */,
-				BEFD309C16D1B0B200B93D49 /* Aether-Prefix.pch */,
 				BEFD309D16D1B0B200B93D49 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -393,6 +412,10 @@
 				BEF50E4A16D979BB00B1AB2F /* AetherEngine.cpp in Sources */,
 				BEF50EA116D97A6400B1AB2F /* SDLMain.m in Sources */,
 				BEF50EA316D97A7100B1AB2F /* main.cpp in Sources */,
+				BE8EC1F716D99B2D005527B1 /* AetherLevel.cpp in Sources */,
+				BE8EC20116D9BE56005527B1 /* Background.cpp in Sources */,
+				BE8EC20216D9BE56005527B1 /* Platform.cpp in Sources */,
+				BE8EC20A16D9E24F005527B1 /* pugixml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
