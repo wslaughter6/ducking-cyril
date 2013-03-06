@@ -21,9 +21,24 @@
     <ClCompile Include="src\AetherEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\AetherLevel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Background.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pugixml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resource\logo.png">
+    <Image Include="resources\background1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\logo.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
@@ -34,6 +49,9 @@
     <ClInclude Include="headers\AetherEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\AetherLevel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Aether.rc">
@@ -42,5 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\SDL_image.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="resources\level1.xml" />
   </ItemGroup>
 </Project>

@@ -51,7 +51,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -69,13 +69,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AetherEngine.cpp" />
+    <ClCompile Include="src\AetherLevel.cpp" />
+    <ClCompile Include="src\Background.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Platform.cpp" />
+    <ClCompile Include="src\pugixml.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resource\logo.png" />
+    <Image Include="resources\background1.png" />
+    <Image Include="resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\AetherEngine.h" />
+    <ClInclude Include="headers\AetherLevel.h" />
     <ClInclude Include="headers\SDL_image.h" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\SDL_image.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="resources\level1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

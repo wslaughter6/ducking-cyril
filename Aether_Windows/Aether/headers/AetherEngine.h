@@ -12,6 +12,7 @@
 #include "stdio.h"
 #include "SDL.h"
 #include "SDL_image.h"
+#include "AetherLevel.h"
 
 class AetherEngine {
     SDL_Surface *mainScreen;
@@ -24,14 +25,17 @@ class AetherEngine {
     //SDL_Surface *image;
     //SDL_Surface *readyImage;
     int blitResult;
+    AetherLevel level1;
+    
 public:
     AetherEngine(void);
-    ~AetherEngine(void);
     void drawBitmap(SDL_Surface *bitmap, int x, int y);
     void loadLogo(std::string logoPath);
+    void loadLevel(int levelNum, std::string levelPath);
     void drawLogoSequence();
     void clearMainScreen();
-
+    void shutdown();
+    void levelExplorer();
 private:
     void keyboard();
     

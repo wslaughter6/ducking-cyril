@@ -17,19 +17,25 @@
 
 int main(int argc, char *argv[])
 {
-	int done;
+    int done;
     SDL_Event event;
-	done = 0;
+	
     //initialize Aether Engine
-    AetherEngine *engine = new AetherEngine();
+    AetherEngine engine = *new AetherEngine();
 	SDL_WM_SetCaption("Aether", NULL); 
-    engine->loadLogo("logo.png");
-    engine->drawLogoSequence();
-
-	while ( !done ) {
+    engine.loadLogo("logo.png");
+    
+    engine.drawLogoSequence();
+    engine.loadLevel(1, "resources/level1.xml");
+    engine.levelExplorer();
+    done = 0;
+   	while ( !done ) {
+        
+       
 		/* Check for events */
 		while ( SDL_PollEvent(&event) ) {
 			switch (event.type) {
+
 				case SDL_MOUSEMOTION:
 					break;
 				case SDL_MOUSEBUTTONDOWN:
@@ -44,7 +50,6 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
-	
 	/* Clean up the SDL library */
 	SDL_Quit();
 	return(0);

@@ -21,7 +21,6 @@ AetherEngine::AetherEngine(){
 		exit(1);
 	}
     mainScreen=SDL_SetVideoMode(1024,768, video_bpp, videoflags); //init screen
-
 	if (mainScreen == NULL) {
 		fprintf(stderr, "Couldn't set 1024x768x%d video mode: %s\n",
                 video_bpp, SDL_GetError());
@@ -29,11 +28,12 @@ AetherEngine::AetherEngine(){
 		exit(2);
 	}
 	SDL_WM_SetCaption("AetherEngine", NULL);
-
+    
     for(int i = 0; i < 322; i++){ //init keys
         KEYS[i] = false;
     }
     SDL_EnableKeyRepeat(0, 0);
+    AetherLevel level1 = *new AetherLevel();
 }
 
 //
@@ -66,8 +66,9 @@ void AetherEngine::drawLogoSequence(){
         SDL_Rect dstRect;
         dstRect.w = studioLogo->w;
         dstRect.h = studioLogo->h;
-		dstRect.x = (1024 - dstRect.w)/2;
-        dstRect.y = (768 - dstRect.h)/3;
+		dstRect.x = (1024 - dstRect.w)/2; //gives equal padding on each side (centers)
+		dstRect.y = (768 - dstRect.h)/3; //gives padding half of much on top as on bottom (~1/3 up)
+
         //SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
         //SDL_Flip(mainScreen);
         clearMainScreen();
@@ -80,7 +81,7 @@ void AetherEngine::drawLogoSequence(){
             SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, i);
             SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
             SDL_Flip(mainScreen);
-
+            
         }
 		SDL_Delay(1000);
 		for(int i = 0; i < 200; i++){
@@ -88,10 +89,10 @@ void AetherEngine::drawLogoSequence(){
             SDL_SetAlpha(studioLogo, SDL_SRCALPHA | SDL_RLEACCEL, 255 - i);
             SDL_BlitSurface(studioLogo, NULL, mainScreen, &dstRect);
             SDL_Flip(mainScreen);
-
-        } //this looponly goes to 200 for now, just to keep the logo move test workable. 
+            
+        } //this looponly goes to 200 for now, just to keep the logo move test workable.
 		// change the limit to 255 to fade all the way out
-
+        
         int moveLogo = 1;
         while(moveLogo){
             //SDL_Delay(20);
@@ -119,13 +120,16 @@ void AetherEngine::drawLogoSequence(){
         }
 		clearMainScreen();
 		SDL_Flip(mainScreen);
-         
+        
         return;
     }else {
         std::cout << "no logo has been loaded" << "\n";
         return;
     }
-    
+}
+
+void AetherEngine::loadLevel(int levelNum, std::string levelPath){
+    level1.loadLevel(levelPath);
 }
 
 void AetherEngine::drawBitmap(SDL_Surface *bitmap, int x, int y){
@@ -134,6 +138,74 @@ void AetherEngine::drawBitmap(SDL_Surface *bitmap, int x, int y){
     dest.y = y;
     SDL_BlitSurface(bitmap, NULL, this->mainScreen, &dest);
 }
+
+void AetherEngine::levelExplorer(){
+    SDL_Rect dstRect;
+    dstRect.x = 0;
+    dstRect.y = 0;
+    dstRect.w = 1024;
+    dstRect.h = 768;
+    int exploreLevel = 1;
+    while(exploreLevel){
+        keyboard();
+        if (KEYS[SDLK_ESCAPE]){
+            exploreLevel = 0;
+        }
+        if (KEYS[SDLK_LEFT]){
+            level1.setCurrentX(level1.getCurrentX() - 20);
+        }
+        if (KEYS[SDLK_RIGHT]){
+            level1.setCurrentX(level1.getCurrentX() + 20);
+        }
+        if (KEYS[SDLK_UP]){
+            level1.setCurrentY(level1.getCurrentY() - 20);
+        }
+        if (KEYS[SDLK_DOWN]){
+            level1.setCurrentY(level1.getCurrentY() + 20);
+        }
+        if (level1.getCurrentX() > 1012){
+            level1.setCurrentX(1012);
+        }
+        if(level1.getCurrentX() < 1){
+            level1.setCurrentX(1);
+        }
+        if(level1.getCurrentY() < 1){
+            level1.setCurrentY(1);
+        }
+        if(level1.getCurrentY() > 459){
+            level1.setCurrentY(459);
+        }
+        SDL_Surface *curScreen = level1.pollLevel();
+    
+        
+        //clearMainScreen();
+        SDL_BlitSurface(curScreen, NULL, mainScreen, &dstRect);
+        SDL_Flip(mainScreen);
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void AetherEngine::keyboard() {
     // message processing loop
     SDL_Event event;
